@@ -3,9 +3,28 @@ using namespace std;
 
 int main()
 {	
-	char s[200];
-	cout << "Introduceti un sir, fara spatii:" << endl;
-	cin >> s;
-	cout << " A beolvasott tomb erteke: " << s << endl;
+	char codDat[10], denumire[21];
+	cout << "Introduceti denumirea produsului(max 20 caractere): " << endl;
+	cin >> denumire;
+	cout << "Introduceti codul produsului (max 9 cifre, fara spatii): " << endl;
+	cin >> codDat;
+
+	int lungime = strlen(codDat);
+	cout << lungime << endl;
+	if (lungime > 9) {
+		cout << "Codul trebuie sa aiba max 9 caractere!!!" << endl;
+		system("pause");
+		return 0;
+	}
+	int i = 0;
+	while (codDat[i] >= '0' && codDat[i] <= '9'){
+		i++;
+	}
+	if (i != lungime) {
+		cout << "Cod eronat: " << codDat << endl;
+		system("pause");
+		return 0;
+	}
+		
 	system("pause");
 }
