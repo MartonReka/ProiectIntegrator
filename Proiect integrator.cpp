@@ -20,7 +20,7 @@ bool isValid(char codDat[]) {
 	return true;
 }
 
-char* bla(char* codDat) {
+char* bla(char codDat[]) {
 	char sirSapte[9] = "";
 	int lungime = strlen(codDat);
 	if (lungime < 9) {
