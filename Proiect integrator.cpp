@@ -33,7 +33,20 @@ int main()
 		return 0;
 		
 	}
-	cout << "majd folytatjuk.puszipa" << endl;
-			
+	char sirSapte[9] = "";
+	int lungime = strlen(codDat);
+	if (lungime < 9) {
+		int j;
+		for (j = 0; j < 9 - lungime; j++)
+			sirSapte[j] = '7';
+		sirSapte[j] = '\0';
+	}
+	char codRo[] = "594";
+	char ean13[13];
+	strcpy_s(ean13, codRo);
+	strcat_s(ean13, sirSapte);
+	strcat_s(ean13, codDat);
+
+	cout << "Primele 12 car. sunt: " << ean13 << endl;
 	system("pause");
 }
