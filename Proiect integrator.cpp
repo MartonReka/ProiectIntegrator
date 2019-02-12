@@ -20,6 +20,18 @@ bool isValid(char codDat[]) {
 	return true;
 }
 
+char* bla(char* codDat) {
+	char sirSapte[9] = "";
+	int lungime = strlen(codDat);
+	if (lungime < 9) {
+		int j;
+		for (j = 0; j < 9 - lungime; j++)
+			sirSapte[j] = '7';
+		sirSapte[j] = '\0';
+	}
+	return sirSapte;
+}
+
 int main()
 {	
 	char codDat[10], denumire[21];
@@ -33,14 +45,9 @@ int main()
 		return 0;
 		
 	}
-	char sirSapte[9] = "";
-	int lungime = strlen(codDat);
-	if (lungime < 9) {
-		int j;
-		for (j = 0; j < 9 - lungime; j++)
-			sirSapte[j] = '7';
-		sirSapte[j] = '\0';
-	}
+
+	char* sirSapte = bla(codDat);
+	
 	char codRo[] = "594";
 	char ean13[13];
 	strcpy_s(ean13, codRo);
