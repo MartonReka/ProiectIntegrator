@@ -55,5 +55,17 @@ int main()
 	strcat_s(ean13, codDat);
 
 	cout << "Primele 12 car. sunt: " << ean13 << endl;
+
+	int nean13[13];
+	for (int i = 0; i < 12; i++) {
+		nean13[i] = ean13[i] - '0';
+	}
+	for (int i = 0; i < 12; i++) {
+		cout << nean13[i];
+		if (i < 12 - 1) {
+			cout << ", ";
+		}
+	}
+
 	system("pause");
 }
