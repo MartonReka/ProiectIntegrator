@@ -67,5 +67,18 @@ int main()
 		}
 	}
 
+	int s1;
+	int s2;
+	s1 = s2 = 0;
+	for (int i = 0; i < 12; i = i + 2) {
+		s1 = s1 + nean13[i];
+		s2 = s2 + nean13[i + 1];
+	}
+	cout << endl;
+
+	int S = s1 + 3 * s2;
+	nean13[12] = 10 - S % 10;
+	cout << S << endl;
+
 	system("pause");
 }
