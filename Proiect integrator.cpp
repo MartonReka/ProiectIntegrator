@@ -1,4 +1,6 @@
 #include<iostream>
+#include"CoduriLGR.h"
+#include"DesenCod.h"
 using namespace std;
 
 bool isValid(char codDat[]) {
@@ -79,6 +81,30 @@ int main()
 	int S = s1 + 3 * s2;
 	nean13[12] = 10 - S % 10;
 	cout << S << endl;
+
+	int b[95];
+	b[0] = b[2] = 1;
+	b[1] = 0;
+	L(nean13[1], b, 3);
+	G(nean13[2], b, 10);
+	G(nean13[3], b, 17);
+	L(nean13[4], b, 24);
+	L(nean13[5], b, 31);
+	G(nean13[6], b, 38);
+
+	b[45] = b[47] = b[49] = 0;
+	b[46] = b[48] = 1;
+
+	for (int i = 0; i < 6; i++) {
+		R(nean13[7 + i], b, 50 + i * 7);
+	}
+	b[92] = b[94] = 1;
+	b[93] = 0;
+
+	desen(b);
+
+	
+
 
 	system("pause");
 }
